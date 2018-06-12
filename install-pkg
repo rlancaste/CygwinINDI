@@ -1,1 +1,1 @@
-setup-x86_64.exe --no-desktop --no-shortcuts --no-startmenu --quiet-mode --root "%cd%" --packages %*
+setup-x86_64.exe --no-admin --no-desktop --no-shortcuts --no-startmenu --quiet-mode -s "http://mirrors.kernel.org/sourceware/cygwin/" --root "C:/cygwin64" --packages "$@"
