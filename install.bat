@@ -19,7 +19,11 @@ SET PACKAGES=%PACKAGES%,libjpeg-devel,libjpeg-turbo,dcraw,libraw-devel,libtheora
 
 REM -- Do it!
 ECHO *** INSTALLING PACKAGES
-setup-x86_64.exe --no-admin -q -D -L -d -g -o -s %SITE% -l "%LOCALDIR%" -R "%ROOTDIR%" -C Base -P %PACKAGES%
+setup-x86_64.exe --no-admin -q -D -L -g -o -s %SITE% -l "%LOCALDIR%" -R "%ROOTDIR%" -C Base -P %PACKAGES%
+
+REM -- Copying in the package installer.
+xcopy /s setup-x86_64.exe "%ROOTDIR%"\setup-x86_64.exe
+xcopy /s install-pkg "%ROOTDIR%"\install-pkg
 
 REM -- Show what we did
 ECHO.
