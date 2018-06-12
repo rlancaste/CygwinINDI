@@ -5,8 +5,8 @@ This repository is meant to support INDI on cygwin.  Installing INDI on cygwin w
 1. Download this repository.
 2. Download Cygwin 64 bit from here: https://cygwin.com/setup-x86_64.exe
 3. Put setup-x86_64.exe in the same folder as the other files
-4. Run install.bat
-5. Run the script buildINDI.sh from inside cygwin.
+4. Run install.bat by double clicking.
+5. Double click the Shortcut to launch "Cygwin Terminal" and type buildINDI.sh from inside cygwin.
 
 Please note this is a work in progress.
 
