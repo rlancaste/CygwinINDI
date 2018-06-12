@@ -10,6 +10,12 @@ This repository is meant to support INDI on cygwin.  Installing INDI on cygwin w
 6. Answer the prompts as the program runs.  Please note, libnova is REQUIRED for INDI.
 7. Once it finishes, INDI can be run from the "Cygwin Terminal" in the normal manner.  You can also use the included link to start the Simulators.
 
+The Shortcut to start the indiserver simulators is this command:
+C:\cygwin64\bin\mintty.exe -h always /bin/bash -l -c "/usr/bin/indiserver.exe ./indi_simulator_telescope ./indi_simulator_ccd ./indi_simulator_focus"
+
+The Shortcut to start the Cygwin Terminal is this command:
+C:\cygwin64\bin\mintty.exe -i /Cygwin-Terminal.ico -
+
 Please note this is a work in progress.
 
 -Thank you very much to the Cygwin project https://cygwin.com for developing Cygwin
