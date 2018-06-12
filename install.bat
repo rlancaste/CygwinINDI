@@ -22,9 +22,9 @@ ECHO *** INSTALLING PACKAGES
 setup-x86_64.exe --no-admin -q -D -L -g -o -s %SITE% -l "%LOCALDIR%" -R "%ROOTDIR%" -C Base -P %PACKAGES%
 
 REM -- Copying in the package installer.
-copy /y setup-x86_64.exe "%ROOTDIR%"/bin/setup-x86_64.exe
-copy /y install-pkg "%ROOTDIR%"/bin/install-pkg
-copy /y buildINDI.sh "%ROOTDIR%"/bin/buildINDI.sh
+copy /y setup-x86_64.exe "%ROOTDIR%"\bin\setup-x86_64.exe
+copy /y install-pkg "%ROOTDIR%"\bin\install-pkg
+copy /y buildINDI.sh "%ROOTDIR%"\bin\buildINDI.sh
 
 REM -- Show what we did
 ECHO.
