@@ -24,6 +24,7 @@ setup-x86_64.exe --no-admin -q -D -L -g -o -s %SITE% -l "%LOCALDIR%" -R "%ROOTDI
 REM -- Copying in the package installer.
 copy setup-x86_64.exe "%ROOTDIR%"/bin/setup-x86_64.exe
 copy install-pkg "%ROOTDIR%"/bin/install-pkg
+copy buildINDI.sh "%ROOTDIR%"/bin/buildINDI.sh
 
 REM -- Show what we did
 ECHO.
