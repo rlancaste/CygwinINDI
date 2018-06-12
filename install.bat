@@ -12,8 +12,8 @@ SET LOCALDIR=%LOCALAPPDATA%/cygwin64
 SET ROOTDIR=C:/cygwin64
 
 REM -- These are the packages we will install (in addition to the default packages)
-SET PACKAGES=mintty,wget,git,git-completion,git-svn,p7zip,gcc-core,cmake,make,automake,autoconf,ninja
-SET PACKAGES=%PACKAGES%,zlib-devel,gettext,python,python3,bison,shared-mime-info
+SET PACKAGES=mintty,wget,git,git-completion,git-svn,p7zip,gcc-core,gcc-g++,cmake,make,automake,autoconf,ninja
+SET PACKAGES=%PACKAGES%,zlib-devel,gettext,python,python3,bison,shared-mime-info,libtool
 SET PACKAGES=%PACKAGES%,libftdi,eigen,gsl,boost,libboost-devel,libcairo2,libcairo-devel,cfitsio,libcfitsio-devel
 SET PACKAGES=%PACKAGES%,libjpeg-devel,libjpeg-turbo,dcraw,libraw-devel,libtheora-devel,libtiff,libncursesw-devel,libiconv,libfftw3
 
