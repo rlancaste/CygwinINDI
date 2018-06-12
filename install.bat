@@ -15,16 +15,16 @@ REM -- These are the packages we will install (in addition to the default packag
 SET PACKAGES=mintty,wget,git,git-completion,git-svn,p7zip,gcc-core,gcc-g++,cmake,make,automake,autoconf,ninja
 SET PACKAGES=%PACKAGES%,zlib-devel,gettext,python,python3,bison,shared-mime-info,libtool
 SET PACKAGES=%PACKAGES%,libftdi,eigen,gsl,boost,libboost-devel,libcairo2,libcairo-devel,cfitsio,libcfitsio-devel
-SET PACKAGES=%PACKAGES%,libjpeg-devel,libjpeg-turbo,dcraw,libraw-devel,libtheora-devel,libtiff,libncursesw-devel,libiconv,libfftw3
+SET PACKAGES=%PACKAGES%,libjpeg-devel,libjpeg-turbo,dcraw,libraw-devel,libtheora-devel,libtiff,libncursesw-devel,libiconv,libfftw3,libusb1.0
 
 REM -- Do it!
 ECHO *** INSTALLING PACKAGES
 setup-x86_64.exe --no-admin -q -D -L -g -o -s %SITE% -l "%LOCALDIR%" -R "%ROOTDIR%" -C Base -P %PACKAGES%
 
 REM -- Copying in the package installer.
-copy setup-x86_64.exe "%ROOTDIR%"/bin/setup-x86_64.exe
-copy install-pkg "%ROOTDIR%"/bin/install-pkg
-copy buildINDI.sh "%ROOTDIR%"/bin/buildINDI.sh
+copy /y setup-x86_64.exe "%ROOTDIR%"/bin/setup-x86_64.exe
+copy /y install-pkg "%ROOTDIR%"/bin/install-pkg
+copy /y buildINDI.sh "%ROOTDIR%"/bin/buildINDI.sh
 
 REM -- Show what we did
 ECHO.
