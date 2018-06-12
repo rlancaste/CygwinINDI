@@ -22,8 +22,8 @@ ECHO *** INSTALLING PACKAGES
 setup-x86_64.exe --no-admin -q -D -L -g -o -s %SITE% -l "%LOCALDIR%" -R "%ROOTDIR%" -C Base -P %PACKAGES%
 
 REM -- Copying in the package installer.
-xcopy /s setup-x86_64.exe "%ROOTDIR%"\setup-x86_64.exe
-xcopy /s install-pkg "%ROOTDIR%"\install-pkg
+copy /s setup-x86_64.exe "%ROOTDIR%"\setup-x86_64.exe
+copy /s install-pkg "%ROOTDIR%"\install-pkg
 
 REM -- Show what we did
 ECHO.
