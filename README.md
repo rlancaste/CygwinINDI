@@ -7,6 +7,8 @@ This repository is meant to support INDI on cygwin.  Installing INDI on cygwin w
 3. Put setup-x86_64.exe in the same folder as the other files
 4. Run install.bat by double clicking.
 5. Double click the Shortcut to launch "Cygwin Terminal" and type buildINDI.sh from inside cygwin.
+6. Answer the prompts as the program runs.  Please note, libnova is REQUIRED for INDI.
+7. Once it finishes, INDI can be run from the "Cygwin Terminal" in the normal manner.  You can also use the included link to start the Simulators.
 
 Please note this is a work in progress.
 
