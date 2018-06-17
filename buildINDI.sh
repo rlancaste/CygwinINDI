@@ -55,9 +55,45 @@ fi
 
 mkdir -p ${INDI_DIR}/build/libindi
 cd ${INDI_DIR}/build/libindi
-cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Debug ${INDI_DIR}/indi/libindi
+cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_CXX_FLAGS="-std=c++11 -U__STRICT_ANSI__" -DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=TRUE -DBUILD_SHARED_LIBS=TRUE -DCMAKE_BUILD_TYPE=Debug ${INDI_DIR}/indi/libindi
 make
 make install
+
+read -p "Do you need to install GPhoto (y/n)? " installGPhoto
+
+if [ "$installGPhoto" == "y" ]
+then
+
+	mkdir -p ${INDI_DIR}/build/3rdparty/gphoto
+	cd ${INDI_DIR}/build/3rdparty/gphoto
+	git clone https://github.com/gphoto/libgphoto2.git
+	cd libgphoto2
+	autoreconf --install --symlink
+	./configure --prefix=/usr/
+	make
+	make install
+
+	cd ${INDI_DIR}/build/3rdparty/gphoto
+	git clone https://github.com/gphoto/gphoto2.git
+	cd gphoto2
+	autoreconf --install --symlink
+	./configure --prefix=/usr/
+	make
+	make install
+fi
+
+#Just GPhoto for now
+mkdir -p ${INDI_DIR}/build/3rdParty/indi_gphoto
+cd ${INDI_DIR}/build/3rdParty/indi_gphoto
+cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_CXX_FLAGS="-std=c++11 -U__STRICT_ANSI__" -DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=TRUE -DBUILD_SHARED_LIBS=TRUE -DCMAKE_BUILD_TYPE=Debug ${INDI_DIR}/indi/3rdParty/indi_gphoto
+make
+make install
+
+#mkdir -p ${INDI_DIR}/build/3rdParty
+#cd ${INDI_DIR}/build/3rdParty 
+#cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_CXX_FLAGS="-std=c++11 -U__STRICT_ANSI__" -DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=TRUE -DBUILD_SHARED_LIBS=TRUE -DCMAKE_BUILD_TYPE=Debug ${INDI_DIR}/indi/3rdParty
+#make
+#make install
 
 statusBanner "INDI is installed." 
 
