@@ -85,7 +85,7 @@ fi
 #Just GPhoto for now
 mkdir -p ${INDI_DIR}/build/3rdParty/indi_gphoto
 cd ${INDI_DIR}/build/3rdParty/indi_gphoto
-cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_CXX_FLAGS="-std=c++11 -U__STRICT_ANSI__" -DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=TRUE -DBUILD_SHARED_LIBS=TRUE -DCMAKE_BUILD_TYPE=Debug ${INDI_DIR}/indi/3rdParty/indi_gphoto
+cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_CXX_FLAGS="-std=c++11 -U__STRICT_ANSI__" -DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=TRUE -DBUILD_SHARED_LIBS=TRUE -DCMAKE_BUILD_TYPE=Debug ${INDI_DIR}/indi/3rdParty/indi-gphoto
 make
 make install
 
